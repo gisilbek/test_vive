@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_17_181400) do
+ActiveRecord::Schema.define(version: 2021_09_17_211706) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,4 +22,14 @@ ActiveRecord::Schema.define(version: 2021_09_17_181400) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "variants", force: :cascade do |t|
+    t.string "name"
+    t.string "precio"
+    t.bigint "product_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["product_id"], name: "index_variants_on_product_id"
+  end
+
+  add_foreign_key "variants", "products"
 end
