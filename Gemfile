@@ -47,3 +47,4 @@ gem 'faker'
 gem "json", "~> 2.2"
 
 gem "rest-client", "~> 2.1"
+gem 'active_model_serializers', '~> 0.10.10'
