@@ -19,9 +19,11 @@ module Api
       def create
         product = Product.new(product_params)
         variant = params[:variants]
-        product.variants.build(name: variant[0]['name'],precio:variant[0]['price'])
-        return bad_request(product.errors) unless product.save
-        params[:id] = product.id
+        variant.each do |var|
+          product.variants.build(name: var['name'], precio: var['price'])
+          return bad_request(product.errors) unless product.save
+          params[:id] = product.id
+        end
         render json: product, status: :created
       end
 
