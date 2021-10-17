@@ -72,6 +72,7 @@ GEM
     case_transform (0.2)
       activesupport
     concurrent-ruby (1.1.9)
+    connection_pool (2.2.5)
     crass (1.0.6)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
@@ -188,6 +189,7 @@ DEPENDENCIES
   active_model_serializers (~> 0.10.10)
   bootsnap (>= 1.4.4)
   byebug
+  connection_pool
   faker
   jbuilder (~> 2.7)
   json (~> 2.2)

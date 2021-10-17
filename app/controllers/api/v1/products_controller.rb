@@ -11,13 +11,7 @@ module Api
       # GET /products
       def index
         @products = Product.all
-
         render json: @products
-      end
-
-      # GET /products/1
-      def show
-        render json: @product
       end
 
       # POST /products
@@ -40,11 +34,6 @@ module Api
         else
           render json: @product.errors, status: :unprocessable_entity
         end
-      end
-
-      # DELETE /products/1
-      def destroy
-        @product.destroy
       end
 
       private

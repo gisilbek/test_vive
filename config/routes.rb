@@ -9,7 +9,6 @@ Rails.application.routes.draw do
       root 'home#index'
       get 'products', to: 'products#index'
       post 'products', to: 'products#create'
-      # get "variants", to: 'variants#index'
       post 'variants', to: 'variants#create'
     end
   end
