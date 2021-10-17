@@ -1,7 +1,12 @@
+# frozen_string_literal: true
+
 module Api
   module V1
+    # app/controllers/api/v1/variants_controller.rb
+
+    # Controller Variants
     class VariantsController < ApplicationController
-      before_action :set_variant, only: [:show, :update, :destroy]
+      before_action :set_variant, only: %i[show update destroy]
 
       # GET /variants
       def index
@@ -41,6 +46,7 @@ module Api
       end
 
       private
+
       # Use callbacks to share common setup or constraints between actions.
       def set_variant
         @variant = Variant.find(params[:id])
